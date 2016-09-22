@@ -138,39 +138,63 @@ char* printEnv(void)
     // http://stackoverflow.com/questions/19584208/identify-new-iphone-model-on-xcode-5-5c-5s
     
     if( [machine isEqualToString:@"i386"] || [machine isEqualToString:@"x86_64"] ) machine = @"ios_Simulator";
-    
-    else if( [machine isEqualToString:@"iPhone1,1"] ) machine = @"iPhone_1G";
-    
-    else if( [machine isEqualToString:@"iPhone1,2"] ) machine = @"iPhone_3G";
-    else if( [machine isEqualToString:@"iPhone2,1"] ) machine = @"iPhone_3GS";
-    
-    else if( [machine isEqualToString:@"iPhone3,1"] ) machine = @"iPhone_4"; // (GSM)
-    else if( [machine isEqualToString:@"iPhone3,3"] ) machine = @"iPhone_4"; // (CDMA/Verizon/Sprint)
-    else if( [machine isEqualToString:@"iPhone4,1"] ) machine = @"iPhone_4S";
-    
+    else if( [machine isEqualToString:@"iPhone1,1"] ) machine = @"iPhone_2G"; //A1203
+    else if( [machine isEqualToString:@"iPhone1,2"] ) machine = @"iPhone_3G"; //A1241/A1324
+    else if( [machine isEqualToString:@"iPhone2,1"] ) machine = @"iPhone_3GS"; //A1303/A1325
+    else if( [machine isEqualToString:@"iPhone3,1"] ) machine = @"iPhone_4"; // (GSM) A1332
+    else if( [machine isEqualToString:@"iPhone3,2"] ) machine = @"iPhone_4"; //A1332
+    else if( [machine isEqualToString:@"iPhone3,3"] ) machine = @"iPhone_4"; // (CDMA/Verizon/Sprint) A1349
+    else if( [machine isEqualToString:@"iPhone4,1"] ) machine = @"iPhone_4S"; //A1387/A1432
     else if( [machine isEqualToString:@"iPhone5,1"] ) machine = @"iPhone_5"; // (model A1428, AT&T/Canada)
-    else if( [machine isEqualToString:@"iPhone5,2"] ) machine = @"iPhone_5"; // (model A1429, everything else)
+    else if( [machine isEqualToString:@"iPhone5,2"] ) machine = @"iPhone_5"; // (model A1429/A1442, everything else)
     else if( [machine isEqualToString:@"iPhone5,3"] ) machine = @"iPhone_5C"; // (model A1456, A1532 | GSM)
     else if( [machine isEqualToString:@"iPhone5,4"] ) machine = @"iPhone_5C"; // (model A1507, A1516, A1526 (China), A1529 | Global)
-    else if( [machine isEqualToString:@"iPhone6,1"] ) machine = @"iPhone_5S"; // (model A1433, A1533 | GSM)
+    else if( [machine isEqualToString:@"iPhone6,1"] ) machine = @"iPhone_5S"; // (model A1433, A1453, A1533 | GSM)
     else if( [machine isEqualToString:@"iPhone6,2"] ) machine = @"iPhone_5S"; // (model A1457, A1518, A1528 (China), A1530 | Global)
-    else if( [machine isEqualToString:@"iPhone6,2"] ) machine = @"iPhone_5S"; // (model A1457, A1518, A1528 (China), A1530 | Global)
-    
-    else if( [machine isEqualToString:@"iPhone7,1"] ) machine = @"iPhone_6Plus";
-    else if( [machine isEqualToString:@"iPhone7,2"] ) machine = @"iPhone_6";
-    
+    else if( [machine isEqualToString:@"iPhone7,1"] ) machine = @"iPhone_6Plus"; //A1522/A1524
+    else if( [machine isEqualToString:@"iPhone7,2"] ) machine = @"iPhone_6"; //A1549/A1586
     else if( [machine isEqualToString:@"iPhone8,1"] ) machine = @"iPhone_6S";
     else if( [machine isEqualToString:@"iPhone8,2"] ) machine = @"iPhone_6SPlus";
-    
     else if( [machine isEqualToString:@"iPhone8,4"] ) machine = @"iPhone_SE";
+    else if( [machine isEqualToString:@"iPhone9,1"] ) machine = @"iPhone_7";
+    else if( [machine isEqualToString:@"iPhone9,2"] ) machine = @"iPhone_7Plus";
     
     else if( [machine isEqualToString:@"iPod1,1"] ) machine = @"iPod_Touch_1G";
     else if( [machine isEqualToString:@"iPod2,1"] ) machine = @"iPod_Touch_2G";
     else if( [machine isEqualToString:@"iPod3,1"] ) machine = @"iPod_Touch_3G";
     else if( [machine isEqualToString:@"iPod4,1"] ) machine = @"iPod_Touch_4G";
+    else if( [machine isEqualToString:@"iPod5,1"] ) machine = @"iPod_Touch_5G";
+    else if( [machine isEqualToString:@"iPod7,1"] ) machine = @"iPod_Touch_6G";
     
     else if( [machine isEqualToString:@"iPad1,1"] ) machine = @"iPad_1";
-    else if( [machine isEqualToString:@"iPad2,1"] ) machine = @"iPad_2";
+    else if( [machine isEqualToString:@"iPad2,1"] ) machine = @"iPad_2"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad2,2"] ) machine = @"iPad_2"; //GSM
+    else if( [machine isEqualToString:@"iPad2,3"] ) machine = @"iPad_2"; //CDMA
+    else if( [machine isEqualToString:@"iPad2,4"] ) machine = @"iPad_2"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad2,5"] ) machine = @"iPad_mini"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad2,6"] ) machine = @"iPad_mini"; //A1454
+    else if( [machine isEqualToString:@"iPad2,7"] ) machine = @"iPad_mini"; //A1455
+    else if( [machine isEqualToString:@"iPad3,1"] ) machine = @"iPad_3"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad3,2"] ) machine = @"iPad_3"; //Wi-Fi+LTE
+    else if( [machine isEqualToString:@"iPad3,3"] ) machine = @"iPad_3"; //Wi-Fi+LTE
+    else if( [machine isEqualToString:@"iPad3,4"] ) machine = @"iPad_4"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad3,5"] ) machine = @"iPad_4"; //A1459
+    else if( [machine isEqualToString:@"iPad3,6"] ) machine = @"iPad_4"; //A1460
+    else if( [machine isEqualToString:@"iPad4,1"] ) machine = @"iPad_Air"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad4,2"] ) machine = @"iPad_Air"; //Wi-Fi+LTE
+    else if( [machine isEqualToString:@"iPad4,3"] ) machine = @"iPad_Air";
+    else if( [machine isEqualToString:@"iPad4,4"] ) machine = @"iPad_mini2"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad4,5"] ) machine = @"iPad_mini2"; //Wi-Fi+LTE
+    else if( [machine isEqualToString:@"iPad4,6"] ) machine = @"iPad_mini2";
+    else if( [machine isEqualToString:@"iPad4,7"] ) machine = @"iPad_mini3"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad4,8"] ) machine = @"iPad_mini3"; //A1600
+    else if( [machine isEqualToString:@"iPad4,9"] ) machine = @"iPad_mini3"; //A1601
+    else if( [machine isEqualToString:@"iPad5,1"] ) machine = @"iPad_mini4"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad5,2"] ) machine = @"iPad_mini4"; //Wi-Fi+LTE
+    else if( [machine isEqualToString:@"iPad5,3"] ) machine = @"iPad_Air2"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad5,4"] ) machine = @"iPad_Air2"; //Wi-Fi+LTE
+    else if( [machine isEqualToString:@"iPad6,7"] ) machine = @"iPad_Pro"; //Wi-Fi
+    else if( [machine isEqualToString:@"iPad6,8"] ) machine = @"iPad_Pro"; //Wi-Fi+LET
     
     return Valid(machine);
 }
